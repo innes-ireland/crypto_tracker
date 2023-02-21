@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import React from "react"
 
-export default function DisplayData(apiUrl,) {
+export default function DisplayData({ apiUrl }) {
 
 
     const [cryptoCoins, setCryptoCoins] = useState([])

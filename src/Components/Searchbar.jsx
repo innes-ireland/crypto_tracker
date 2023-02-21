@@ -1,10 +1,11 @@
 import { useState } from "react"
-export default function SearchBar(coinNumber, setCoinNumber, setApiUrl) {
+export default function SearchBar({ coinNumber, setCoinNumber, apiUrl, setApiUrl }) {
 
 
 
     const handleCoinNumber = (e) => {
         setCoinNumber({ ...coinNumber, value: e.target.value })
+        console.log(coinNumber)
     }
 
     const handleSearch = () => {
