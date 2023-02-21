@@ -11,7 +11,7 @@ function App() {
     value: 10,
   })
 
-  const [apiUrl, setApiUrl] = useState("https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=10&page=1&sparkline=false")
+  const [apiUrl, setApiUrl] = useState(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=${coinNumber.value}&page=1&sparkline=false`) // default view is top ten crypto currencies 
 
   const [isLoading, setIsLoading] = useState(false)
 

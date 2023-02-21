@@ -1,5 +1,5 @@
 import { useState } from "react"
-export default function SearchBar({ coinNumber, setCoinNumber, apiUrl, setApiUrl }) {
+export default function SearchBar({ coinNumber, setCoinNumber, setApiUrl }) {
 
 
 
@@ -10,8 +10,6 @@ export default function SearchBar({ coinNumber, setCoinNumber, apiUrl, setApiUrl
 
     const handleSearch = () => {
         setApiUrl(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=${coinNumber.value}&page=1&sparkline=false`)
-
-        console.log(setApiUrl)
     }
 
 
