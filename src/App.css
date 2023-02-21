@@ -1,38 +1,48 @@
+/* colour scheme 
+Midnight blue - #263E67
+Blue- #0080F6
+Gunmetal Grey - #8D918D
+Orange - #FFCE75
+*/
+
+html {
+  color: #FFCE75;
+  background-color: #263e67;
+}
+
+a {
+  color: #FFCE75;
+  text-decoration: none;
+
+}
+
+a:hover {
+  color: #8D918D;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* navbar component styling */
+.navBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wallet_logo {
+  height: 50px;
+  width: 50px;
 }
+
+/* searchbar styling */
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* footer styling */

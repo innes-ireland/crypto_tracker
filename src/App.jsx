@@ -1,4 +1,4 @@
-
+import "./App.css"
 import DisplayData from './Components/DisplayData';
 import Navbar from './Components/Navbar';
 import { useEffect, useState } from 'react';

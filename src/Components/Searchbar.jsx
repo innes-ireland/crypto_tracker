@@ -14,7 +14,7 @@ export default function SearchBar({ coinNumber, setCoinNumber, setApiUrl }) {
 
 
     return (
-        <div className="top_coin_selector">
+        <div className="searchBar">
             show top
             <select onChange={handleCoinNumber} value={coinNumber.value}>
                 <option value="10"> 10</option>
