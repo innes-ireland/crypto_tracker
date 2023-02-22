@@ -45,4 +45,17 @@ a:hover {
   align-items: center;
 }
 
+/* coin information styling */
+
+.coinInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.coin_image {
+  height: 30px;
+  width: 30px;
+}
+
 /* footer styling */

@@ -15,15 +15,15 @@ export default function SearchBar({ coinNumber, setCoinNumber, setApiUrl }) {
 
     return (
         <div className="searchBar">
-            show top
-            <select onChange={handleCoinNumber} value={coinNumber.value}>
-                <option value="10"> 10</option>
-                <option value="25"> 25</option>
-                <option value="50"> 50</option>
-                <option value="100"> 100</option>
-            </select>
-            cryptocurrencies
-            <button className="searchButton" onClick={handleSearch}> search</button>
+            <h3> show top
+                <select onChange={handleCoinNumber} value={coinNumber.value}>
+                    <option value="10"> 10</option>
+                    <option value="25"> 25</option>
+                    <option value="50"> 50</option>
+                    <option value="100"> 100</option>
+                </select>
+                cryptocurrencies
+                <button className="searchButton" onClick={handleSearch}> search</button></h3>
         </div>
     )
 }

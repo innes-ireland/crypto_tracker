@@ -18,7 +18,8 @@ export default function DisplayData({ apiUrl, }) {
     return (
         <div className="coinInfo">
             {cryptoCoins.map((cryptoCoin) => {
-                return <div className="coinDetails"><img source={{ uri: cryptoCoin.image }} alt={cryptoCoin.name} /> {cryptoCoin.name}</div>
+                console.log(cryptoCoin)
+                return <div className="coinDetails"><img className="coin_image" src={cryptoCoin.image} alt="the cryptocoins logo" /> {cryptoCoin.name} {cryptoCoin.current_price}</div>
             })}
         </div>
     )
