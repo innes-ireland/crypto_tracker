@@ -23,7 +23,7 @@ a:hover {
 .App {
   display: flex;
   flex-direction: column;
-  align-items: center;
+
 }
 
 /* navbar component styling */
@@ -33,7 +33,7 @@ a:hover {
   align-items: center;
 }
 
-.wallet_logo {
+.walletLogo {
   height: 50px;
   width: 50px;
 }
@@ -42,7 +42,7 @@ a:hover {
 .searchBar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: center;
 }
 
 /* coin information styling */
@@ -50,12 +50,43 @@ a:hover {
 .coinInfo {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 10px;
 }
 
-.coin_image {
+.coinImage {
   height: 30px;
   width: 30px;
+  padding: 5px;
+
+}
+
+.coinDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+/* modal window styling */
+.coinModal_wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* footer styling */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;
+}
