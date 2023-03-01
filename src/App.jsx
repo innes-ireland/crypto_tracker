@@ -1,9 +1,11 @@
 import "./App.css"
-import DisplayData from './Components/DisplayData';
 import Navbar from './Components/Navbar';
 import { useEffect, useState } from 'react';
 import SearchBar from './Components/Searchbar';
 import Footer from './Components/Footer';
+import CoinModal from "./Components/CoinModal";
+import axios from "axios";
+
 
 function App() {
 
@@ -15,6 +17,21 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(false)
 
+  const [modalState, setModalState] = useState(false)
+
+  const [cryptoCoins, setCryptoCoins] = useState([])
+
+  const closeWindow = () => {
+    setModalState(false)
+  }
+
+
+  const fetchData = async () => {
+    const response = await axios.get(apiUrl)
+    setCryptoCoins(response.data)
+
+  }
+  useEffect(() => { fetchData() }, [apiUrl])
   useEffect(() => {
     const loadData = async () => {
       setIsLoading(true);
@@ -36,7 +53,21 @@ function App() {
     <div className="App">
       <Navbar />
       <SearchBar coinNumber={coinNumber} setCoinNumber={setCoinNumber} setApiUrl={setApiUrl} />
-      <DisplayData apiUrl={apiUrl} setApiUrl={setApiUrl} />
+      <div className="coinInfo_wrapper">
+        <div className="coinInfo">
+          {cryptoCoins?.map((cryptoCoin) => {
+            console.log(cryptoCoin)
+            return <div className="coinDetails">
+              <img className="coinImage" src={cryptoCoin.image} alt="the cryptocoins logo" />
+              {cryptoCoin.name} ${cryptoCoin.current_price}
+              <button className="modalButton" onClick={() => setModalState(true)}>More Info</button>
+              {modalState == true ? (
+                <CoinModal setModalState={setModalState} modalState={modalState} />) :
+                (null)}
+            </div>
+          })}
+        </div>
+      </div>
       <Footer />
     </div>
   );
