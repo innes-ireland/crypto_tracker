@@ -3,7 +3,6 @@ import Navbar from './Components/Navbar';
 import { useEffect, useState } from 'react';
 import SearchBar from './Components/Searchbar';
 import Footer from './Components/Footer';
-import CoinModal from "./Components/CoinModal";
 import axios from "axios";
 
 
@@ -56,13 +55,25 @@ function App() {
       <div className="coinInfo_wrapper">
         <div className="coinInfo">
           {cryptoCoins?.map((cryptoCoin) => {
-            console.log(cryptoCoin)
             return <div className="coinDetails">
               <img className="coinImage" src={cryptoCoin.image} alt="the cryptocoins logo" />
               {cryptoCoin.name} ${cryptoCoin.current_price}
               <button className="modalButton" onClick={() => setModalState(true)}>More Info</button>
               {modalState == true ? (
-                <CoinModal setModalState={setModalState} modalState={modalState} />) :
+                < div className="coinModal_wrapper" >
+                  <div className="coinModal_header">
+                    <h2> {cryptoCoin.name} </h2>
+                  </div>
+                  <div className="coinModal_content">
+                    <h2> </h2>
+                  </div>
+                  <div className="closeButton">
+                    <button className="closeButton" onClick={() => { setModalState(false) }}>
+                      Close Window
+                    </button>
+                  </div>
+
+                </div >) :
                 (null)}
             </div>
           })}
