@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import SearchBar from './Components/Searchbar';
 import Footer from './Components/Footer';
 import axios from "axios";
+import ModalWindow from "./Components/ModalWindow";
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
 
   const [modalState, setModalState] = useState(false)
+
+  const [modalData, setModalData] = useState(null)
 
   const [cryptoCoins, setCryptoCoins] = useState([])
 
@@ -55,32 +58,20 @@ function App() {
       <div className="coinInfo_wrapper">
         <div className="coinInfo">
           {cryptoCoins?.map((cryptoCoin) => {
-            return <div className="coinDetails">
+            return <div className="coinDetails" key={cryptoCoin.id}>
               <img className="coinImage" src={cryptoCoin.image} alt="the cryptocoins logo" />
               {cryptoCoin.name} ${cryptoCoin.current_price}
-              <button className="modalButton" onClick={() => setModalState(true)}>More Info</button>
+              <button className="modalButton" onClick={() => { setModalData(cryptoCoin); setModalState(true) }}>More Info</button>
               {modalState == true ? (
-                < div className="coinModal_wrapper" >
-                  <div className="coinModal_header">
-                    <h2> {cryptoCoin.name} </h2>
-                  </div>
-                  <div className="coinModal_content">
-                    <h2> </h2>
-                  </div>
-                  <div className="closeButton">
-                    <button className="closeButton" onClick={() => { setModalState(false) }}>
-                      Close Window
-                    </button>
-                  </div>
-
-                </div >) :
+                <ModalWindow modalState={modalState} setModalState={setModalState} modalData={modalData} setModalData={setModalData} />
+              ) :
                 (null)}
             </div>
           })}
         </div>
       </div>
       <Footer />
-    </div>
+    </div >
   );
 }
 
