@@ -83,6 +83,14 @@ a:hover {
   justify-content: center;
 }
 
+.coinModal_container {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FFCE75;
+  background-color: #263e67;
+  padding: 10px;
+}
+
 /* footer styling */
 .footer {
   display: flex;
