@@ -60,7 +60,9 @@ function App() {
           {cryptoCoins?.map((cryptoCoin) => {
             return <div className="coinDetails" key={cryptoCoin.id}>
               <img className="coinImage" src={cryptoCoin.image} alt="the cryptocoins logo" />
-              {cryptoCoin.name} ${cryptoCoin.current_price}
+              <div className="coinText">
+                {cryptoCoin.name} ${cryptoCoin.current_price}
+              </div>
               <button className="modalButton" onClick={() => { setModalData(cryptoCoin); setModalState(true) }}>More Info</button>
               {modalState == true ? (
                 <ModalWindow modalState={modalState} setModalState={setModalState} modalData={modalData} setModalData={setModalData} />

@@ -61,10 +61,10 @@ export default function ModalWindow({ setModalState, setModalData, modalData }) 
                 </div>
                 <div className="coinModal_content">
                     <div className="coinModal_text">
-                        <p> Current Price:{modalData.current_price}<br></br>
+                        <p> Current Price:${modalData.current_price}<br></br>
                             Number in Circulation: {modalData.circulating_supply}<br></br>
-                            24hr high: {modalData.high_24h}<br></br>
-                            24hr low: {modalData.low_24h}<br></br>
+                            24hr high: ${modalData.high_24h}<br></br>
+                            24hr low: ${modalData.low_24h}<br></br>
                         </p>
                     </div>
                     <div className="coinModal_graph"></div>

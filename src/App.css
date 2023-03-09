@@ -26,6 +26,23 @@ a:hover {
 
 }
 
+button {
+  background-color: #263e67;
+  color: #FFCE75;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FFCE75;
+  border-radius: 5px;
+}
+
+select {
+  background-color: #263e67;
+  color: #FFCE75;
+  border-style: solid;
+  border-color: #FFCE75;
+  border-radius: 5px;
+}
+
 /* navbar component styling */
 .navBar {
   display: flex;
@@ -66,8 +83,14 @@ a:hover {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 10px;
+  padding: 20px;
 }
+
+.coinText {
+  padding: 10px
+}
+
+
 
 /* modal window styling */
 .coinModal_wrapper {
@@ -89,6 +112,11 @@ a:hover {
   border-color: #FFCE75;
   background-color: #263e67;
   padding: 10px;
+}
+
+.coinModal_content {
+  display: flex;
+  flex-direction: row;
 }
 
 /* footer styling */

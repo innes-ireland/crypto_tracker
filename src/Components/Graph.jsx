@@ -17,7 +17,8 @@ export default function Graph({ lastSevenDays, coinPriceArray }) {
 
     useEffect(() => {
         setDataSets({
-            label: "coin value over last seven days",
+            label: "coin value in $USD over last seven days",
+            color: ["#FFCE75"],
             backgroundColor: ["#FFCE75"],
             data: coinPriceArray
         })
